@@ -14,7 +14,7 @@ p6df::modules::go::deps() {
 ######################################################################
 #<
 #
-# Function: p6df::modules::go::home::symlink()
+# Function: p6df::modules::rust::home::symlink()
 #
 #>
 ######################################################################
@@ -25,6 +25,13 @@ p6df::modules::rust::home::symlink() {
   fi
 }
 
+######################################################################
+#<
+#
+# Function: p6df::modules::rust::external::brew()
+#
+#>
+######################################################################
 p6df::modules::rust::external::brew() {
 
   brew install rustc-completion
@@ -43,7 +50,7 @@ p6df::modules::rust::external::brew() {
 ######################################################################
 p6df::modules::rust::langs() {
 
-  rustup-init --options
+  rustup-init -v --profile complete --no-modify-path -y
 }
 
 ######################################################################
@@ -102,7 +109,6 @@ p6df::modules::rust::rustenv::prompt::line() {
 p6df::modules::rust::prompt::line() {
 
   p6_rust_prompt_info
-  p6_rust_path_prompt_info
 }
 
 ######################################################################

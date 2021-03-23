@@ -1,10 +1,10 @@
-# p6df-go
+# p6df-rust
 
 ## Table of Contents
 
 
-### p6df-go
-- [p6df-go](#p6df-go)
+### p6df-rust
+- [p6df-rust](#p6df-rust)
   - [Badges](#badges)
   - [Distributions](#distributions)
   - [Summary](#summary)
@@ -17,12 +17,12 @@
 ### Badges
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-yellowgreen.svg)](https://opensource.org/licenses/Apache-2.0)
-[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/p6m7g8/p6df-go)
-[![Mergify](https://img.shields.io/endpoint.svg?url=https://gh.mergify.io/badges/p6m7g8/p6df-go/&style=flat)](https://mergify.io)
-[![codecov](https://codecov.io/gh/p6m7g8/p6df-go/branch/master/graph/badge.svg?token=14Yj1fZbew)](https://codecov.io/gh/p6m7g8/p6df-go)
-[![Known Vulnerabilities](https://snyk.io/test/github/p6m7g8/p6df-go/badge.svg?targetFile=package.json)](https://snyk.io/test/github/p6m7g8/p6df-go?targetFile=package.json)
-[![Gihub repo dependents](https://badgen.net/github/dependents-repo/p6m7g8/p6df-go)](https://github.com/p6m7g8/p6df-go/network/dependents?dependent_type=REPOSITORY)
-[![Gihub package dependents](https://badgen.net/github/dependents-pkg/p6m7g8/p6df-go)](https://github.com/p6m7g8/p6df-go/network/dependents?dependent_type=PACKAGE)
+[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/p6m7g8/p6df-rust)
+[![Mergify](https://img.shields.io/endpoint.svg?url=https://gh.mergify.io/badges/p6m7g8/p6df-rust/&style=flat)](https://mergify.io)
+[![codecov](https://codecov.io/gh/p6m7g8/p6df-rust/branch/master/graph/badge.svg?token=14Yj1fZbew)](https://codecov.io/gh/p6m7g8/p6df-rust)
+[![Known Vulnerabilities](https://snyk.io/test/github/p6m7g8/p6df-rust/badge.svg?targetFile=package.json)](https://snyk.io/test/github/p6m7g8/p6df-rust?targetFile=package.json)
+[![Gihub repo dependents](https://badgen.net/github/dependents-repo/p6m7g8/p6df-rust)](https://github.com/p6m7g8/p6df-rust/network/dependents?dependent_type=REPOSITORY)
+[![Gihub package dependents](https://badgen.net/github/dependents-pkg/p6m7g8/p6df-rust)](https://github.com/p6m7g8/p6df-rust/network/dependents?dependent_type=PACKAGE)
 
 ## Summary
 
@@ -40,19 +40,21 @@
 
 ## Usage
 
-### p6df-go:
+### p6df-rust:
 
-#### p6df-go/init.zsh:
+#### p6df-rust/init.zsh:
 
-- p6_go_prompt_info()
+- p6_rust_prompt_info()
 - p6df::modules::go::deps()
-- p6df::modules::go::goenv::init(dir)
-- p6df::modules::go::goenv::prompt::line()
-- p6df::modules::go::home::symlink()
-- p6df::modules::go::init()
-- p6df::modules::go::langs()
-- p6df::modules::go::prompt::line()
-- str str = p6_go_path_prompt_info()
+- p6df::modules::rust::external::brew()
+- p6df::modules::rust::home::symlink()
+- p6df::modules::rust::init()
+- p6df::modules::rust::langs()
+- p6df::modules::rust::prompt::line()
+- p6df::modules::rust::rustenv::init(dir)
+- p6df::modules::rust::rustenv::prompt::line()
+- str str = p6_rust_path_prompt_info()
+
 
 
 ## Author
