@@ -123,7 +123,9 @@ p6df::modules::rust::prompt::line() {
 ######################################################################
 p6_rust_path_prompt_info() {
 
-  local str="rust:\t"
+  local str="rustenv:  rustenv_root=$RUSTENV_ROOT
+rustenv:  rustup_home=$RUSTUP_HOME
+rustenv:  cargo_home=$CARGO_HOME"
 
   p6_return_str "$str"
 }
