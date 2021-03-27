@@ -45,9 +45,8 @@
 #### p6df-rust/init.zsh:
 
 - p6_rust_prompt_info()
-- p6df::modules::go::deps()
+- p6df::modules::rust::deps()
 - p6df::modules::rust::external::brew()
-- p6df::modules::rust::home::symlink()
 - p6df::modules::rust::init()
 - p6df::modules::rust::langs()
 - p6df::modules::rust::prompt::line()
