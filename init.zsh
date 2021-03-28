@@ -14,6 +14,19 @@ p6df::modules::rust::deps() {
 ######################################################################
 #<
 #
+# Function: p6df::modules::rust::vscodes()
+#
+#>
+######################################################################
+p6df::modules::rust::vscodes() {
+
+  # rust
+  code --install-extension rust-lang.rust
+}
+
+######################################################################
+#<
+#
 # Function: p6df::modules::rust::external::brew()
 #
 #>
@@ -44,6 +57,7 @@ p6df::modules::rust::langs() {
 #
 # Function: p6df::modules::rust::init()
 #
+#  Environment:	 P6_DFZ_SRC_DIR
 #>
 ######################################################################
 p6df::modules::rust::init() {
@@ -59,6 +73,7 @@ p6df::modules::rust::init() {
 #  Args:
 #	dir -
 #
+#  Environment:	 CARGO_HOME DISABLE_ENVS RUSTENV_ROOT RUSTUP_HOME
 #>
 ######################################################################
 p6df::modules::rust::rustenv::init() {
@@ -105,6 +120,7 @@ p6df::modules::rust::prompt::line() {
 #  Returns:
 #	str - str
 #
+#  Environment:	 CARGO_HOME RUSTENV_ROOT RUSTUP_HOME
 #>
 ######################################################################
 p6_rust_path_prompt_info() {
@@ -121,6 +137,7 @@ rustenv:  cargo_home=$CARGO_HOME"
 #
 # Function: p6_rust_prompt_info()
 #
+#  Depends:	 p6_lang
 #>
 ######################################################################
 p6_rust_prompt_info() {

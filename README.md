@@ -52,6 +52,7 @@
 - p6df::modules::rust::prompt::line()
 - p6df::modules::rust::rustenv::init(dir)
 - p6df::modules::rust::rustenv::prompt::line()
+- p6df::modules::rust::vscodes()
 - str str = p6_rust_path_prompt_info()
 
 
