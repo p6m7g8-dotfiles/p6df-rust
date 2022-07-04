@@ -44,16 +44,13 @@
 
 #### p6df-rust/init.zsh:
 
-- p6_rust_prompt_info()
 - p6df::modules::rust::deps()
 - p6df::modules::rust::external::brew()
 - p6df::modules::rust::init()
 - p6df::modules::rust::langs()
-- p6df::modules::rust::prompt::line()
 - p6df::modules::rust::rustenv::init(dir)
-- p6df::modules::rust::rustenv::prompt::line()
 - p6df::modules::rust::vscodes()
-- str str = p6_rust_path_prompt_info()
+- str str = p6_rust_env_prompt_info()
 
 
 

@@ -91,31 +91,7 @@ p6df::modules::rust::rustenv::init() {
 ######################################################################
 #<
 #
-# Function: p6df::modules::rust::rustenv::prompt::line()
-#
-#>
-######################################################################
-p6df::modules::rust::rustenv::prompt::line() {
-
-  p6_rust_path_prompt_info
-}
-
-######################################################################
-#<
-#
-# Function: p6df::modules::rust::prompt::line()
-#
-#>
-######################################################################
-p6df::modules::rust::prompt::line() {
-
-  p6_rust_prompt_info
-}
-
-######################################################################
-#<
-#
-# Function: str str = p6_rust_path_prompt_info()
+# Function: str str = p6_rust_env_prompt_info()
 #
 #  Returns:
 #	str - str
@@ -123,25 +99,11 @@ p6df::modules::rust::prompt::line() {
 #  Environment:	 CARGO_HOME RUSTENV_ROOT RUSTUP_HOME
 #>
 ######################################################################
-p6_rust_path_prompt_info() {
+p6_rust_env_prompt_info() {
 
-  local str="rustenv:  rustenv_root=$RUSTENV_ROOT
-rustenv:  rustup_home=$RUSTUP_HOME
-rustenv:  cargo_home=$CARGO_HOME"
+  local str="rustenv_root=$RUSTENV_ROOT
+rustup_home=$RUSTUP_HOME
+cargo_home=$CARGO_HOME"
 
   p6_return_str "$str"
-}
-
-######################################################################
-#<
-#
-# Function: p6_rust_prompt_info()
-#
-#  Depends:	 p6_lang
-#>
-######################################################################
-p6_rust_prompt_info() {
-
-  echo -n "rust:\t  "
-  p6_lang_version "rust"
 }
