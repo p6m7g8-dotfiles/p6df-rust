@@ -85,7 +85,7 @@ p6df::modules::rust::rustenv::init() {
   export RUSTUP_HOME=$RUSTENV_ROOT/.rustup
   export CARGO_HOME=$RUSTENV_ROOT/.cargo
 
-  p6df::util::path::if "$CARGO_HOME/bin"
+  p6_path_if "$CARGO_HOME/bin"
 }
 
 ######################################################################
