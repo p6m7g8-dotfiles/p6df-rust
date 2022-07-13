@@ -101,9 +101,9 @@ p6df::modules::rust::rustenv::init() {
 ######################################################################
 p6_rust_env_prompt_info() {
 
-  local str="rustenv_root=$RUSTENV_ROOT
-rustup_home=$RUSTUP_HOME
-cargo_home=$CARGO_HOME"
+  local str="rustenv_root:\t  $RUSTENV_ROOT
+rustup_home:\t  $RUSTUP_HOME
+cargo_home:\t  $CARGO_HOME"
 
   p6_return_str "$str"
 }
