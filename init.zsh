@@ -1,3 +1,4 @@
+# shellcheck shell=bash
 ######################################################################
 #<
 #
@@ -22,6 +23,8 @@ p6df::modules::rust::vscodes() {
 
   # rust
   code --install-extension rust-lang.rust
+
+  p6_return_void
 }
 
 ######################################################################
@@ -38,6 +41,8 @@ p6df::modules::rust::external::brew() {
 
   brew install rustscan
   brew install rust-analyzer
+  
+  p6_return_void
 }
 
 ######################################################################
@@ -50,6 +55,8 @@ p6df::modules::rust::external::brew() {
 p6df::modules::rust::langs() {
 
   rustup-init -v --profile complete --no-modify-path -y
+
+  p6_return_void
 }
 
 ######################################################################
@@ -63,6 +70,8 @@ p6df::modules::rust::langs() {
 p6df::modules::rust::init() {
 
   p6df::modules::rust::rustenv::init "$P6_DFZ_SRC_DIR"
+
+  p6_return_void
 }
 
 ######################################################################
@@ -73,19 +82,21 @@ p6df::modules::rust::init() {
 #  Args:
 #	dir -
 #
-#  Environment:	 CARGO_HOME DISABLE_ENVS RUSTENV_ROOT RUSTUP_HOME
+#  Environment:	 CARGO_HOME P6_DFZ_LANGS_DISABLE RUSTENV_ROOT RUSTUP_HOME
 #>
 ######################################################################
 p6df::modules::rust::rustenv::init() {
   local dir="$1"
 
-  [ -n "$DISABLE_ENVS" ] && return
+  if p6_string_blank "$P6_DFZ_LANGS_DISABLE"; then
+    p6_env_export RUSTENV_ROOT "$dir/chriskuehl/rustenv"
+    p6_env_export RUSTUP_HOME "$RUSTENV_ROOT/.rustup"
+    p6_env_export CARGO_HOME "$RUSTENV_ROOT/.cargo"
 
-  export RUSTENV_ROOT=$dir/chriskuehl/rustenv
-  export RUSTUP_HOME=$RUSTENV_ROOT/.rustup
-  export CARGO_HOME=$RUSTENV_ROOT/.cargo
+    p6_path_if "$CARGO_HOME/bin"
+  fi
 
-  p6_path_if "$CARGO_HOME/bin"
+  p6_return_void
 }
 
 ######################################################################
