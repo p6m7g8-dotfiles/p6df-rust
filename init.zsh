@@ -102,7 +102,7 @@ p6df::modules::rust::rustenv::init() {
 ######################################################################
 #<
 #
-# Function: str str = p6_rust_env_prompt_info()
+# Function: str str = p6df::modules::rust::env::prompt::info()
 #
 #  Returns:
 #	str - str
@@ -110,7 +110,7 @@ p6df::modules::rust::rustenv::init() {
 #  Environment:	 CARGO_HOME RUSTENV_ROOT RUSTUP_HOME
 #>
 ######################################################################
-p6_rust_env_prompt_info() {
+p6df::modules::rust::env::prompt::info() {
 
   local str="rustenv_root:\t  $RUSTENV_ROOT
 rustup_home:\t  $RUSTUP_HOME

@@ -50,7 +50,7 @@
 - p6df::modules::rust::langs()
 - p6df::modules::rust::rustenv::init(dir)
 - p6df::modules::rust::vscodes()
-- str str = p6_rust_env_prompt_info()
+- str str = p6df::modules::rust::env::prompt::info()
 
 
 
