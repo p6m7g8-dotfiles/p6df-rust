@@ -22,7 +22,7 @@ p6df::modules::rust::deps() {
 p6df::modules::rust::vscodes() {
 
   # rust
-  code --install-extension rust-lang.rust
+  code --install-extension rust-lang.rust-analyzer
 
   p6_return_void
 }
@@ -41,6 +41,8 @@ p6df::modules::rust::external::brew() {
 
   brew install rustscan
   brew install rust-analyzer
+
+  brew install zig
   
   p6_return_void
 }
