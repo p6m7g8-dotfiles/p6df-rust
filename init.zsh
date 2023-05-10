@@ -9,6 +9,7 @@
 p6df::modules::rust::deps() {
   ModuleDeps=(
     p6m7g8-dotfiles/p6common
+    MenkeTechnologies/zsh-cargo-completion
   )
 }
 
@@ -43,7 +44,7 @@ p6df::modules::rust::external::brew() {
   brew install rust-analyzer
 
   brew install zig
-  
+
   p6_return_void
 }
 
