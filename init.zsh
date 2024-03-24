@@ -22,7 +22,6 @@ p6df::modules::rust::deps() {
 ######################################################################
 p6df::modules::rust::vscodes() {
 
-  # rust
   code --install-extension rust-lang.rust-analyzer
 
   p6_return_void
@@ -37,13 +36,13 @@ p6df::modules::rust::vscodes() {
 ######################################################################
 p6df::modules::rust::external::brew() {
 
-  brew install rustc-completion
-  brew install rustup-init
+  p6df::modules::homebrew::cli::brew::install rustc-completion
+  p6df::modules::homebrew::cli::brew::install rustup-init
 
-  brew install rustscan
-  brew install rust-analyzer
+  p6df::modules::homebrew::cli::brew::install rustscan
+  p6df::modules::homebrew::cli::brew::install rust-analyzer
 
-  brew install zig
+  p6df::modules::homebrew::cli::brew::install zig
 
   p6_return_void
 }
@@ -65,12 +64,20 @@ p6df::modules::rust::langs() {
 ######################################################################
 #<
 #
-# Function: p6df::modules::rust::init()
+# Function: p6df::modules::rust::init(_module, dir)
+#
+#  Args:
+#	_module -
+#	dir -
 #
 #  Environment:	 P6_DFZ_SRC_DIR
 #>
 ######################################################################
 p6df::modules::rust::init() {
+  local _module="$1"
+  local dir="$2"
+
+  p6_bootstrap "$dir"
 
   p6df::modules::rust::rustenv::init "$P6_DFZ_SRC_DIR"
 
@@ -120,16 +127,4 @@ rustup_home:\t  $RUSTUP_HOME
 cargo_home:\t  $CARGO_HOME"
 
   p6_return_str "$str"
-}
-
-######################################################################
-#<
-#
-# Function: p6df::modules::rust::rustup::inline()
-#
-#>
-######################################################################
-p6df::modules::rust::rustup::inline() {
-
-  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 }

@@ -10,8 +10,7 @@
   - [Summary](#summary)
   - [Contributing](#contributing)
   - [Code of Conduct](#code-of-conduct)
-  - [Changes](#changes)
-    - [Usage](#usage)
+  - [Usage](#usage)
   - [Author](#author)
 
 ### Badges
@@ -34,11 +33,13 @@
 
 - [Code of Conduct](https://github.com/p6m7g8/.github/blob/master/CODE_OF_CONDUCT.md)
 
-## Changes
-
-- [Change Log](CHANGELOG.md)
-
 ## Usage
+
+
+### Aliases
+
+
+### Functions
 
 ### p6df-rust:
 
@@ -46,15 +47,28 @@
 
 - p6df::modules::rust::deps()
 - p6df::modules::rust::external::brew()
-- p6df::modules::rust::init()
+- p6df::modules::rust::init(_module, dir)
 - p6df::modules::rust::langs()
 - p6df::modules::rust::rustenv::init(dir)
-- p6df::modules::rust::rustup::inline()
 - p6df::modules::rust::vscodes()
 - str str = p6df::modules::rust::env::prompt::info()
 
 
+### p6df-rust/lib:
 
+#### p6df-rust/lib/rustup.sh:
+
+- p6df::modules::rust::rustup::inline()
+
+
+
+## Hier
+```text
+.
+└── rustup.sh
+
+1 directory, 1 file
+```
 ## Author
 
 Philip M . Gollucci <pgollucci@p6m7g8.com>
