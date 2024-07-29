@@ -37,7 +37,7 @@ p6df::modules::rust::vscodes() {
 p6df::modules::rust::external::brew() {
 
   p6df::modules::homebrew::cli::brew::install rustc-completion
-  p6df::modules::homebrew::cli::brew::install rustup-init
+  p6df::modules::homebrew::cli::brew::install rustup
 
   p6df::modules::homebrew::cli::brew::install rustscan
   p6df::modules::homebrew::cli::brew::install rust-analyzer
@@ -56,7 +56,7 @@ p6df::modules::rust::external::brew() {
 ######################################################################
 p6df::modules::rust::langs() {
 
-  rustup-init -v --profile complete --no-modify-path -y
+  rustup -v --profile complete --no-modify-path -y
 
   p6_return_void
 }
