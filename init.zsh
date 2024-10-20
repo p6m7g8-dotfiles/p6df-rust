@@ -56,7 +56,7 @@ p6df::modules::rust::external::brew() {
 ######################################################################
 p6df::modules::rust::langs() {
 
-  rustup -v --profile complete --no-modify-path -y
+  rustup-init -v --profile complete --no-modify-path -y
 
   p6_return_void
 }
