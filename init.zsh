@@ -10,6 +10,7 @@ p6df::modules::rust::deps() {
   ModuleDeps=(
     p6m7g8-dotfiles/p6common
     MenkeTechnologies/zsh-cargo-completion
+    chriskuehl/rustenv
   )
 }
 
