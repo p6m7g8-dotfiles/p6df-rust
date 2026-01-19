@@ -5,8 +5,6 @@
 ## Badges
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-yellowgreen.svg)](https://opensource.org/licenses/Apache-2.0)
-[![Mergify](https://img.shields.io/endpoint.svg?url=https://gh.mergify.io/badges//p6df-rust/&style=flat)](https://mergify.io)
-[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](<https://gitpod.io/#https://github.com//p6df-rust>)
 
 ## Summary
 
@@ -34,7 +32,7 @@
 - p6df::modules::rust::langs()
 - p6df::modules::rust::rustenv::init(dir)
 - p6df::modules::rust::vscodes()
-- str str = p6df::modules::rust::env::prompt::info()
+- str str = p6df::modules::rust::prompt::env()
 
 ## p6df-rust/lib
 
