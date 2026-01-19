@@ -113,19 +113,21 @@ p6df::modules::rust::rustenv::init() {
 ######################################################################
 #<
 #
-# Function: str str = p6df::modules::rust::env::prompt::info()
+# Function: str str = p6df::modules::rust::prompt::env()
 #
 #  Returns:
 #	str - str
 #
-#  Environment:	 CARGO_HOME RUSTENV_ROOT RUSTUP_HOME
 #>
 ######################################################################
-p6df::modules::rust::env::prompt::info() {
+p6df::modules::rust::prompt::env() {
 
-  local str="rustenv_root:\t  $RUSTENV_ROOT
-rustup_home:\t  $RUSTUP_HOME
-cargo_home:\t  $CARGO_HOME"
+#  local str="rustenv_root:\t  $RUSTENV_ROOT
+# rustup_home:\t  $RUSTUP_HOME
+# cargo_home:\t  $CARGO_HOME"
+  local str=""
 
   p6_return_str "$str"
 }
+
+# XXX: fix rustup v renv v Renv and add ::prompt::lang
