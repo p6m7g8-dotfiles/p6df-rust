@@ -37,13 +37,13 @@ p6df::modules::rust::vscodes() {
 ######################################################################
 p6df::modules::rust::external::brew() {
 
-  p6df::modules::homebrew::cli::brew::install rustc-completion
-  p6df::modules::homebrew::cli::brew::install rustup
+  p6df::core::homebrew::cli::brew::install rustc-completion
+  p6df::core::homebrew::cli::brew::install rustup
 
-  p6df::modules::homebrew::cli::brew::install rustscan
-  p6df::modules::homebrew::cli::brew::install rust-analyzer
+  p6df::core::homebrew::cli::brew::install rustscan
+  p6df::core::homebrew::cli::brew::install rust-analyzer
 
-  p6df::modules::homebrew::cli::brew::install zig
+  p6df::core::homebrew::cli::brew::install zig
 
   p6_return_void
 }
