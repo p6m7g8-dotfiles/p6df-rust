@@ -23,7 +23,40 @@ p6df::modules::rust::deps() {
 ######################################################################
 p6df::modules::rust::vscodes() {
 
-  code --install-extension rust-lang.rust-analyzer
+  p6df::modules::vscode::extension::install rust-lang.rust-analyzer
+
+  p6_return_void
+}
+
+######################################################################
+#<
+#
+# Function: str json = p6df::modules::rust::vscodes::config()
+#
+#  Returns:
+#	str - json
+#
+#>
+######################################################################
+p6df::modules::rust::vscodes::config() {
+
+  cat <<'EOF'
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer",
+    "editor.formatOnSave": true
+  },
+  "rust-analyzer.check.overrideCommand": [
+    "cargo",
+    "clippy",
+    "--fix",
+    "--workspace",
+    "--message-format=json",
+    "--all-targets",
+    "--allow-dirty",
+    "--allow-staged"
+  ],
+  "rust-analyzer.procMacro.enable": true
+EOF
 
   p6_return_void
 }
