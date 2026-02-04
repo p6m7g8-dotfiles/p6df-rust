@@ -31,10 +31,7 @@ p6df::modules::rust::vscodes() {
 ######################################################################
 #<
 #
-# Function: str json = p6df::modules::rust::vscodes::config()
-#
-#  Returns:
-#	str - json
+# Function: p6df::modules::rust::vscodes::config()
 #
 #>
 ######################################################################
