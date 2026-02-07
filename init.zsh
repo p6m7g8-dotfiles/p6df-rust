@@ -39,8 +39,7 @@ p6df::modules::rust::vscodes::config() {
 
   cat <<'EOF'
   "[rust]": {
-    "editor.defaultFormatter": "rust-lang.rust-analyzer",
-    "editor.formatOnSave": true
+    "editor.defaultFormatter": "rust-lang.rust-analyzer"
   },
   "rust-analyzer.check.overrideCommand": [
     "cargo",
