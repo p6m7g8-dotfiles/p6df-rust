@@ -39,15 +39,16 @@ TODO: Add a short summary of this module.
 - `p6df::modules::rust::external::brew()`
 - `p6df::modules::rust::init(_module, dir)`
   - Args:
-    - _module - 
-    - dir - 
+    - _module
+    - dir
 - `p6df::modules::rust::langs()`
 - `p6df::modules::rust::rustenv::init(dir)`
   - Args:
-    - dir - 
+    - dir
 - `p6df::modules::rust::vscodes()`
 - `p6df::modules::rust::vscodes::config()`
 - `str str = p6df::modules::rust::prompt::env()`
+- `str str = p6df::modules::rust::prompt::lang()`
 
 #### p6df-rust/lib
 
