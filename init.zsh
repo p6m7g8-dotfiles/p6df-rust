@@ -128,7 +128,7 @@ p6df::modules::rust::init() {
 p6df::modules::rust::rustenv::init() {
   local dir="$1"
 
-  if p6_string_blank "$P6_DFZ_LANGS_DISABLE"; then
+  if p6_string_blank_NOT "$P6_DFZ_LANGS_DISABLE"; then
     p6_env_export RUSTENV_ROOT "$dir/p6m7g8/rustenv"
     p6_env_export RUSTUP_HOME "$RUSTENV_ROOT/.rustup"
     p6_env_export CARGO_HOME "$RUSTENV_ROOT/.cargo"
@@ -155,7 +155,7 @@ p6df::modules::rust::prompt::env() {
 rustup_home:\t  $RUSTUP_HOME
 cargo_home:\t  $CARGO_HOME"
 
-  p6_return_str "$str"
+  p6_return_str ""
 }
 
 ######################################################################
