@@ -17,6 +17,22 @@ p6df::modules::rust::deps() {
 ######################################################################
 #<
 #
+# Function: p6df::modules::rust::aliases::init()
+#
+#>
+######################################################################
+p6df::modules::rust::aliases::init() {
+
+  # override co=cargo from MenkeTechnologies/zsh-cargo-completion; free co for codex
+  p6_alias "ca" "cargo"
+  unalias co 2>/dev/null || true
+
+  p6_return_void
+}
+
+######################################################################
+#<
+#
 # Function: p6df::modules::rust::vscodes()
 #
 #>
@@ -60,11 +76,11 @@ EOF
 ######################################################################
 #<
 #
-# Function: p6df::modules::rust::external::brew()
+# Function: p6df::modules::rust::external::brews()
 #
 #>
 ######################################################################
-p6df::modules::rust::external::brew() {
+p6df::modules::rust::external::brews() {
 
   p6df::core::homebrew::cli::brew::install rustc-completion
   p6df::core::homebrew::cli::brew::install rustup
