@@ -23,6 +23,8 @@ p6df::modules::rust::deps() {
 ######################################################################
 p6df::modules::rust::aliases::init() {
 
+  local _module="$1"
+  local _dir="$2"
   # override co=cargo from MenkeTechnologies/zsh-cargo-completion; free co for codex
   p6_alias "ca" "cargo"
   unalias co 2>/dev/null || true
@@ -110,22 +112,14 @@ p6df::modules::rust::langs() {
 ######################################################################
 #<
 #
-# Function: p6df::modules::rust::init(_module, dir)
-#
-#  Args:
-#	_module -
-#	dir -
+# Function: p6df::modules::rust::langmgr::init()
 #
 #  Environment:	 P6_DFZ_SRC_DIR
 #>
 ######################################################################
-p6df::modules::rust::init() {
-  local _module="$1"
-  local dir="$2"
+p6df::modules::rust::langmgr::init() {
 
-  p6_bootstrap "$dir"
   p6df::core::lang::mgr::init "$P6_DFZ_SRC_DIR/p6m7g8/rustenv" "rust"
-  p6df::modules::rust::rustenv::init "$P6_DFZ_SRC_DIR"
 
   p6_return_void
 }
@@ -133,45 +127,23 @@ p6df::modules::rust::init() {
 ######################################################################
 #<
 #
-# Function: p6df::modules::rust::rustenv::init(dir)
+# Function: p6df::modules::rust::env::init()
 #
-#  Args:
-#	dir -
-#
-#  Environment:	 CARGO_HOME P6_DFZ_LANGS_DISABLE RUSTENV_ROOT RUSTUP_HOME
+#  Environment:	 CARGO_HOME P6_DFZ_LANGS_DISABLE P6_DFZ_SRC_DIR RUSTENV_ROOT RUSTUP_HOME
 #>
 ######################################################################
-p6df::modules::rust::rustenv::init() {
-  local dir="$1"
+p6df::modules::rust::env::init() {
 
+  local _module="$1"
+  local _dir="$2"
   if p6_string_blank_NOT "$P6_DFZ_LANGS_DISABLE"; then
-    p6_env_export RUSTENV_ROOT "$dir/p6m7g8/rustenv"
+    p6_env_export RUSTENV_ROOT "$P6_DFZ_SRC_DIR/p6m7g8/rustenv"
     p6_env_export RUSTUP_HOME "$RUSTENV_ROOT/.rustup"
     p6_env_export CARGO_HOME "$RUSTENV_ROOT/.cargo"
     p6_path_if "$CARGO_HOME/bin"
   fi
 
   p6_return_void
-}
-
-######################################################################
-#<
-#
-# Function: str str = p6df::modules::rust::prompt::env()
-#
-#  Returns:
-#	str - str
-#
-#  Environment:	 CARGO_HOME RUSTENV_ROOT RUSTUP_HOME
-#>
-######################################################################
-p6df::modules::rust::prompt::env() {
-
-  local str="rustenv_root:\t  $RUSTENV_ROOT
-rustup_home:\t  $RUSTUP_HOME
-cargo_home:\t  $CARGO_HOME"
-
-  p6_return_str ""
 }
 
 ######################################################################
@@ -193,4 +165,20 @@ p6df::modules::rust::prompt::lang() {
     "rustc --version 2>/dev/null | p6_filter_column_pluck 2")
 
   p6_return_str "$str"
+}
+
+######################################################################
+#<
+#
+# Function: words rust $CARGO_HOME = p6df::modules::rust::prompt::env()
+#
+#  Returns:
+#	words - rust $CARGO_HOME
+#
+#  Environment:	 CARGO_HOME
+#>
+######################################################################
+p6df::modules::rust::prompt::env() {
+
+  p6_return_words 'rust' '$CARGO_HOME'
 }
