@@ -180,5 +180,5 @@ p6df::modules::rust::prompt::lang() {
 ######################################################################
 p6df::modules::rust::prompt::env() {
 
-  p6_return_words 'rust' '$CARGO_HOME'
+  p6_return_words 'rust' "$CARGO_HOME"
 }
