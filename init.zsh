@@ -1,5 +1,11 @@
 # shellcheck shell=bash
 ######################################################################
+#<
+#
+# Function: p6df::modules::rust::deps()
+#
+#>
+######################################################################
 p6df::modules::rust::deps() {
   ModuleDeps=(
     p6m7g8-dotfiles/p6common
@@ -8,6 +14,13 @@ p6df::modules::rust::deps() {
   )
 }
 
+######################################################################
+#<
+#
+# Function: p6df::modules::rust::env::init()
+#
+#  Environment:	 CARGO_HOME P6_DFZ_LANGS_DISABLE P6_DFZ_SRC_DIR RUSTENV_ROOT RUSTUP_HOME
+#>
 ######################################################################
 p6df::modules::rust::env::init() {
 
@@ -24,6 +37,12 @@ p6df::modules::rust::env::init() {
 }
 
 ######################################################################
+#<
+#
+# Function: p6df::modules::rust::aliases::init()
+#
+#>
+######################################################################
 p6df::modules::rust::aliases::init() {
 
   local _module="$1"
@@ -36,6 +55,13 @@ p6df::modules::rust::aliases::init() {
 }
 
 ######################################################################
+#<
+#
+# Function: p6df::modules::rust::langmgr::init()
+#
+#  Environment:	 P6_DFZ_SRC_DIR
+#>
+######################################################################
 p6df::modules::rust::langmgr::init() {
 
   p6df::core::lang::mgr::init "$P6_DFZ_SRC_DIR/p6m7g8/rustenv" "rust"
@@ -43,6 +69,12 @@ p6df::modules::rust::langmgr::init() {
   p6_return_void
 }
 
+######################################################################
+#<
+#
+# Function: p6df::modules::rust::external::brews()
+#
+#>
 ######################################################################
 p6df::modules::rust::external::brews() {
 
@@ -58,6 +90,12 @@ p6df::modules::rust::external::brews() {
 }
 
 ######################################################################
+#<
+#
+# Function: p6df::modules::rust::langs()
+#
+#>
+######################################################################
 p6df::modules::rust::langs() {
 
   rustup-init -v --profile complete --no-modify-path -y
@@ -66,6 +104,12 @@ p6df::modules::rust::langs() {
 }
 
 ######################################################################
+#<
+#
+# Function: p6df::modules::rust::vscodes()
+#
+#>
+######################################################################
 p6df::modules::rust::vscodes() {
 
   p6df::modules::vscode::extension::install rust-lang.rust-analyzer
@@ -73,6 +117,12 @@ p6df::modules::rust::vscodes() {
   p6_return_void
 }
 
+######################################################################
+#<
+#
+# Function: p6df::modules::rust::vscodes::config()
+#
+#>
 ######################################################################
 p6df::modules::rust::vscodes::config() {
 
@@ -96,56 +146,6 @@ EOF
   p6_return_void
 }
 
-######################################################################
-#<
-#
-# Function: p6df::modules::rust::deps()
-#
-#>
-######################################################################
-#<
-#
-# Function: p6df::modules::rust::aliases::init()
-#
-#>
-######################################################################
-#<
-#
-# Function: p6df::modules::rust::vscodes()
-#
-#>
-######################################################################
-#<
-#
-# Function: p6df::modules::rust::vscodes::config()
-#
-#>
-######################################################################
-#<
-#
-# Function: p6df::modules::rust::external::brews()
-#
-#>
-######################################################################
-#<
-#
-# Function: p6df::modules::rust::langs()
-#
-#>
-######################################################################
-#<
-#
-# Function: p6df::modules::rust::langmgr::init()
-#
-#  Environment:	 P6_DFZ_SRC_DIR
-#>
-######################################################################
-#<
-#
-# Function: p6df::modules::rust::env::init()
-#
-#  Environment:	 CARGO_HOME P6_DFZ_LANGS_DISABLE P6_DFZ_SRC_DIR RUSTENV_ROOT RUSTUP_HOME
-#>
 ######################################################################
 #<
 #
