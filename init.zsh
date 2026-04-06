@@ -17,7 +17,11 @@ p6df::modules::rust::deps() {
 ######################################################################
 #<
 #
-# Function: p6df::modules::rust::env::init()
+# Function: p6df::modules::rust::env::init(_module, _dir)
+#
+#  Args:
+#	_module -
+#	_dir -
 #
 #  Environment:	 CARGO_HOME P6_DFZ_LANGS_DISABLE P6_DFZ_SRC_DIR RUSTENV_ROOT RUSTUP_HOME
 #>
@@ -39,7 +43,11 @@ p6df::modules::rust::env::init() {
 ######################################################################
 #<
 #
-# Function: p6df::modules::rust::aliases::init()
+# Function: p6df::modules::rust::aliases::init(_module, _dir)
+#
+#  Args:
+#	_module -
+#	_dir -
 #
 #>
 ######################################################################
@@ -170,10 +178,10 @@ p6df::modules::rust::prompt::lang() {
 ######################################################################
 #<
 #
-# Function: words rust $CARGO_HOME = p6df::modules::rust::prompt::env()
+# Function: words rust = p6df::modules::rust::prompt::env()
 #
 #  Returns:
-#	words - rust $CARGO_HOME
+#	words - rust
 #
 #  Environment:	 CARGO_HOME
 #>
